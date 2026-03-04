@@ -1,0 +1,14 @@
+name: introduction 
+on: 
+  push:
+    branches: [main]
+
+jobs:
+   greet:
+      runs-on: ubuntu-latest
+      steps:
+        - name: my introduction 
+          run: echo "Hi This is Sushant Patekar"
+           
+        - name:  what is date
+          run: echo "$(date)"

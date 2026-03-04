@@ -23,4 +23,3 @@ jobs:
     steps:
       - name: deploy on server 
         run: echo "deployment on server "
-        run: echo "deployment done "

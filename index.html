@@ -14,7 +14,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI',sans-serif;
+font-family:Segoe UI;
 scroll-behavior:smooth;
 }
 
@@ -27,13 +27,12 @@ color:white;
 
 nav{
 position:fixed;
-width:100%;
 top:0;
-background:rgba(15,23,42,0.9);
+width:100%;
+background:#020617;
 padding:15px 10%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 z-index:1000;
 }
 
@@ -43,9 +42,8 @@ color:#38bdf8;
 
 nav a{
 color:white;
-margin-left:25px;
 text-decoration:none;
-font-weight:500;
+margin-left:20px;
 }
 
 /* HERO */
@@ -55,30 +53,50 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 padding:0 10%;
 }
 
-.hero h1{
+.hero-container{
+display:flex;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-text h1{
 font-size:48px;
 }
 
-.hero span{
+.hero-text span{
 color:#38bdf8;
 }
 
-.hero p{
-margin-top:20px;
-font-size:18px;
+.hero-text p{
+margin-top:15px;
 color:#cbd5f5;
+max-width:500px;
+}
+
+.hero-image img{
+width:280px;
+border-radius:50%;
+border:4px solid #38bdf8;
+box-shadow:0 0 25px rgba(56,189,248,0.5);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
 
 .btn{
-margin-top:30px;
+margin-top:25px;
 display:inline-block;
 padding:12px 28px;
 background:#38bdf8;
-color:#000;
+color:black;
 border-radius:25px;
 text-decoration:none;
 font-weight:bold;
@@ -92,8 +110,8 @@ padding:80px 10%;
 
 .title{
 font-size:32px;
-margin-bottom:30px;
 color:#38bdf8;
+margin-bottom:30px;
 }
 
 /* SKILLS */
@@ -114,9 +132,10 @@ transition:0.3s;
 
 .skill:hover{
 transform:translateY(-5px);
+background:#334155;
 }
 
-/* EXPERIENCE */
+/* TIMELINE */
 
 .timeline{
 border-left:3px solid #38bdf8;
@@ -127,13 +146,13 @@ padding-left:20px;
 margin-bottom:30px;
 }
 
-/* CERTIFICATIONS */
+/* CERT */
 
 .cert{
 background:#1e293b;
 padding:20px;
 border-radius:10px;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 /* CONTACT */
@@ -143,8 +162,8 @@ text-align:center;
 }
 
 .social i{
-font-size:28px;
-margin:15px;
+font-size:30px;
+margin:10px;
 color:#38bdf8;
 }
 
@@ -152,8 +171,8 @@ color:#38bdf8;
 
 .fade{
 opacity:0;
-transform:translateY(20px);
-transition:all 1s;
+transform:translateY(30px);
+transition:1s;
 }
 
 .show{
@@ -168,31 +187,45 @@ transform:translateY(0);
 
 <nav>
 <h2>Sushant</h2>
+
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
 </div>
-</nav>
 
+</nav>
 
 <!-- HERO -->
 
-<div class="hero">
+<section class="hero">
 
-<div>
+<div class="hero-container">
+
+<div class="hero-text">
+
 <h1>Hello I'm <span>Sushant Patekar</span></h1>
 
-<p>Senior Linux & DevOps Engineer with 9+ years experience in
-OpenShift, Kubernetes, Linux Administration and CI/CD.</p>
+<p>
+Senior Linux & DevOps Engineer with 9+ years of experience managing
+OpenShift clusters, Kubernetes infrastructure and enterprise Linux
+systems.
+</p>
 
 <a href="#contact" class="btn">Contact Me</a>
 
 </div>
 
+<div class="hero-image">
+
+<img src="profile.jpg">
+
 </div>
 
+</div>
+
+</section>
 
 <!-- ABOUT -->
 
@@ -202,17 +235,15 @@ OpenShift, Kubernetes, Linux Administration and CI/CD.</p>
 
 <p>
 
-Senior Linux & DevOps Engineer based in Mumbai with strong expertise in
-OpenShift administration, Kubernetes infrastructure, Linux system
-engineering and enterprise DevOps platforms.
+Senior DevOps and Linux engineer based in Mumbai with strong expertise
+in Kubernetes, OpenShift, automation and enterprise infrastructure.
 
-Experienced in managing production clusters, CI/CD automation, cloud
-infrastructure and enterprise system performance optimization.
+Experienced in performance tuning, production troubleshooting,
+CI/CD pipeline development and cloud environments.
 
 </p>
 
 </section>
-
 
 <!-- SKILLS -->
 
@@ -223,29 +254,19 @@ infrastructure and enterprise system performance optimization.
 <div class="skills">
 
 <div class="skill">Linux (RHEL / Ubuntu)</div>
-
 <div class="skill">Kubernetes</div>
-
 <div class="skill">OpenShift</div>
-
 <div class="skill">Docker</div>
-
 <div class="skill">AWS</div>
-
 <div class="skill">Jenkins</div>
-
 <div class="skill">Ansible</div>
-
 <div class="skill">ELK Stack</div>
-
 <div class="skill">Networking</div>
-
 <div class="skill">NFS Storage</div>
 
 </div>
 
 </section>
-
 
 <!-- EXPERIENCE -->
 
@@ -257,38 +278,24 @@ infrastructure and enterprise system performance optimization.
 
 <div class="timeline-item">
 
-<h3>Tech Mahindra — Tech Lead DevOps Engineer</h3>
-
-<p>2021 - Present</p>
-
-<p>
-
-Managing OpenShift clusters, Kubernetes workloads,
-CI/CD pipelines and enterprise Linux infrastructure.
-
-</p>
+<h3>Tech Mahindra</h3>
+<p>Tech Lead – Linux & DevOps Engineer</p>
+<p>2021 – Present</p>
 
 </div>
 
 <div class="timeline-item">
 
-<h3>Capgemini — Linux Administrator</h3>
-
-<p>2018 - 2021</p>
-
-<p>
-
-Handled enterprise Linux environments, VMware infrastructure
-and advanced troubleshooting.
-
-</p>
+<h3>Capgemini</h3>
+<p>Associate Consultant – Linux Administrator</p>
+<p>2018 – 2021</p>
 
 </div>
 
 <div class="timeline-item">
 
-<h3>Simple Logic IT — System Administrator</h3>
-
+<h3>Simple Logic IT</h3>
+<p>System Administrator</p>
 <p>2018</p>
 
 </div>
@@ -297,7 +304,6 @@ and advanced troubleshooting.
 
 </section>
 
-
 <!-- CERTIFICATIONS -->
 
 <section class="fade">
@@ -305,13 +311,10 @@ and advanced troubleshooting.
 <h2 class="title">Certifications</h2>
 
 <div class="cert">AWS Certified Solutions Architect – Associate</div>
-
 <div class="cert">Red Hat Certified Engineer (RHCE)</div>
-
 <div class="cert">Red Hat Certified System Administrator (RHCSA)</div>
 
 </section>
-
 
 <!-- CONTACT -->
 
@@ -320,9 +323,7 @@ and advanced troubleshooting.
 <h2 class="title">Contact</h2>
 
 <p>📍 Mumbai, India</p>
-
 <p>📞 +91 7021176686</p>
-
 <p>✉ sushant.patekar9@gmail.com</p>
 
 <div class="social">
@@ -331,7 +332,7 @@ and advanced troubleshooting.
 <i class="fab fa-linkedin"></i>
 </a>
 
-<a href="https://github.com/">
+<a href="#">
 <i class="fab fa-github"></i>
 </a>
 
@@ -339,19 +340,17 @@ and advanced troubleshooting.
 
 </section>
 
-
-
 <script>
 
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-entry.target.classList.add('show');
+entry.target.classList.add("show")
 }
 })
 })
 
-document.querySelectorAll('.fade').forEach(el=>{
+document.querySelectorAll(".fade").forEach(el=>{
 observer.observe(el)
 })
 

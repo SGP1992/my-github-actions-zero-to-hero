@@ -7,7 +7,7 @@ jobs:
     validate:
         runs-on: ubuntu-latest
 
-        setps:
+        steps:
             - name: checkout code
               uses: actions/checkout@v4
       

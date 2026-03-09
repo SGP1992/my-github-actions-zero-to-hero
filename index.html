@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,25 +24,48 @@ text-align:center;
 padding:40px;
 }
 
+.profile{
+
+width:160px;
+height:160px;
+border-radius:50%;
+border:4px solid #38bdf8;
+margin-bottom:20px;
+object-fit:cover;
+
+}
+
 header h1{
-font-size:42px;
-margin-bottom:5px;
+margin:5px;
+font-size:40px;
 }
 
 header h2{
+margin:5px;
 font-weight:400;
 color:#38bdf8;
 }
 
-.contact{
-margin-top:10px;
-font-size:14px;
-opacity:.9;
+/* LINKS */
+
+.links a{
+
+display:inline-block;
+margin:6px 10px;
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+
 }
 
-/* FLOATING DEVOPS BALLS */
+.links a:hover{
+text-decoration:underline;
+}
 
-.devops-area{
+/* 3D DEVOPS BALLS */
+
+.background{
+
 position:fixed;
 top:0;
 left:0;
@@ -50,9 +73,11 @@ width:100%;
 height:100%;
 z-index:-1;
 overflow:hidden;
+
 }
 
 .ball{
+
 position:absolute;
 width:120px;
 height:120px;
@@ -60,73 +85,97 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-background:linear-gradient(135deg,#06b6d4,#6366f1);
-color:white;
 font-weight:bold;
-animation:float 18s infinite linear;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
+
+background: radial-gradient(circle at 30% 30%, #67e8f9, #1e3a8a);
+
+box-shadow:
+inset -10px -10px 25px rgba(0,0,0,0.4),
+inset 10px 10px 25px rgba(255,255,255,0.2),
+0 0 25px rgba(0,0,0,0.4);
+
+animation:float 20s linear infinite;
+
 }
 
 @keyframes float{
 
-0%{transform:translateY(100vh) rotate(0deg);}
-100%{transform:translateY(-200px) rotate(360deg);}
+0%{
+transform:translateY(100vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(-200px) rotate(360deg);
+}
 
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
+
 max-width:1100px;
 margin:auto;
 padding:40px 20px;
+
 }
 
 h3{
-font-size:28px;
+
 border-left:5px solid #38bdf8;
 padding-left:10px;
 margin-bottom:20px;
+
 }
 
 /* SKILLS */
 
 .skills{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
+
 }
 
 .skill{
+
 background:#1e293b;
 padding:15px;
 border-radius:8px;
 text-align:center;
+
 }
 
 /* TIMELINE */
 
 .timeline{
+
 position:relative;
 margin-top:40px;
+
 }
 
 .timeline::before{
+
 content:'';
 position:absolute;
 left:50%;
 width:4px;
 height:100%;
 background:#38bdf8;
+
 }
 
 .timeline-item{
+
 width:45%;
-padding:20px;
 background:#1e293b;
+padding:20px;
 border-radius:8px;
-position:relative;
 margin-bottom:30px;
+position:relative;
+
 }
 
 .timeline-item:nth-child(odd){
@@ -138,23 +187,27 @@ left:55%;
 }
 
 .timeline-item h4{
-margin:0;
 color:#38bdf8;
+margin:0;
 }
 
-/* CERTIFICATIONS */
+/* CARDS */
 
-.cert{
+.card{
+
 background:#1e293b;
 padding:15px;
+border-radius:8px;
 margin:10px 0;
-border-radius:6px;
+
 }
 
 footer{
+
 text-align:center;
 padding:30px;
 opacity:.7;
+
 }
 
 </style>
@@ -163,24 +216,27 @@ opacity:.7;
 
 <body>
 
-<div class="devops-area" id="balls"></div>
+<div class="background" id="balls"></div>
 
 <header>
+
+<img src="profile.jpg" class="profile">
 
 <h1>Sushant Ghansham Patekar</h1>
 
 <h2>Senior Linux & DevOps Engineer</h2>
 
-<div class="contact">
+<div class="links">
 
-📍 Mumbai, India  
-📞 +91-7021176686  
-✉ sushant.patekar9@gmail.com  
+📍 Mumbai
 
-<br><br>
+<br>
 
-LinkedIn  
-https://www.linkedin.com/in/sushant-patekar-a4b616105/
+<a href="tel:+917021176686">📞 +91-7021176686</a>
+
+<a href="mailto:sushant.patekar9@gmail.com">✉ Email</a>
+
+<a href="https://www.linkedin.com/in/sushant-patekar-a4b616105/" target="_blank">LinkedIn Profile</a>
 
 </div>
 
@@ -192,12 +248,7 @@ https://www.linkedin.com/in/sushant-patekar-a4b616105/
 
 <p>
 
-Senior Linux & DevOps Engineer with 9+ years of experience managing enterprise infrastructure,
-OpenShift clusters, and production systems. Expert in Linux administration, Kubernetes,
-OpenShift, automation, CI/CD pipelines, and cloud infrastructure.
-
-Strong experience with Red Hat technologies, performance tuning, infrastructure
-automation, monitoring systems, and high availability production environments.
+Senior Linux & DevOps Engineer with 9+ years of experience managing enterprise infrastructure, OpenShift clusters and production systems. Strong expertise in Kubernetes, automation, CI/CD pipelines, monitoring and cloud infrastructure.
 
 </p>
 
@@ -209,17 +260,17 @@ automation, monitoring systems, and high availability production environments.
 
 <div class="skills">
 
-<div class="skill">OpenShift</div>
+<div class="skill">OpenShift Administration</div>
 <div class="skill">Kubernetes</div>
 <div class="skill">Docker</div>
-<div class="skill">AWS</div>
 <div class="skill">Linux (RHEL)</div>
-<div class="skill">Ansible</div>
-<div class="skill">Jenkins</div>
-<div class="skill">Git</div>
-<div class="skill">ELK Stack</div>
+<div class="skill">AWS Cloud</div>
+<div class="skill">Ansible Automation</div>
+<div class="skill">Jenkins CI/CD</div>
+<div class="skill">Git / Bitbucket</div>
+<div class="skill">ELK Monitoring</div>
 <div class="skill">Nagios</div>
-<div class="skill">VMware</div>
+<div class="skill">VMware / RHV</div>
 <div class="skill">Networking</div>
 
 </div>
@@ -234,20 +285,18 @@ automation, monitoring systems, and high availability production environments.
 
 <div class="timeline-item">
 
-<h4>Tech Mahindra</h4>
+<h4>Tech Mahindra (2021 – Present)</h4>
 
 <p>
 
-Tech Lead – Linux & DevOps Engineer  
-Aug 2021 – Present
+Tech Lead – Linux & DevOps Engineer
 
 <br><br>
 
-• Administered OpenShift production clusters  
+• Administer OpenShift clusters  
 • Led OCP upgrades 4.10 → 4.18  
-• Designed CI/CD pipelines using Jenkins & Bitbucket  
-• Automated infrastructure using Bash & Ansible  
-• Managed RHV virtualization and NFS storage
+• CI/CD pipelines using Jenkins & Nexus  
+• Infrastructure automation using Ansible
 
 </p>
 
@@ -255,19 +304,17 @@ Aug 2021 – Present
 
 <div class="timeline-item">
 
-<h4>Capgemini</h4>
+<h4>Capgemini (2018 – 2021)</h4>
 
 <p>
 
-Associate Consultant – Linux Administrator  
-Dec 2018 – Aug 2021
+Associate Consultant – Linux Administrator
 
 <br><br>
 
-• Provided enterprise Linux L1/L2/L3 support  
-• Managed AWS hybrid infrastructure  
-• Automated operational tasks with Bash  
-• Administered VMware environments
+• Managed enterprise Linux environments  
+• AWS hybrid infrastructure support  
+• Bash automation for operational tasks
 
 </p>
 
@@ -275,18 +322,16 @@ Dec 2018 – Aug 2021
 
 <div class="timeline-item">
 
-<h4>Simple Logic IT Pvt Ltd</h4>
+<h4>Simple Logic IT (2018)</h4>
 
 <p>
 
-Executive System Administrator  
-Apr 2018 – Dec 2018
+Executive System Administrator
 
 <br><br>
 
-• Supported SBI UPI and enterprise projects  
-• Performed Linux installation and hardening  
-• Maintained server health monitoring
+• Linux installation and system hardening  
+• Client infrastructure monitoring
 
 </p>
 
@@ -294,18 +339,16 @@ Apr 2018 – Dec 2018
 
 <div class="timeline-item">
 
-<h4>T&M Services Consulting</h4>
+<h4>T&M Services (2016 – 2018)</h4>
 
 <p>
 
-Linux & Network Administrator  
-May 2016 – Mar 2018
+Linux & Network Administrator
 
 <br><br>
 
-• Managed Linux servers inside BARC campus  
-• Configured switches and firewall rules  
-• Maintained system performance monitoring
+• Managed Linux servers at BARC campus  
+• Network monitoring and firewall management
 
 </p>
 
@@ -319,11 +362,11 @@ May 2016 – Mar 2018
 
 <h3>Certifications</h3>
 
-<div class="cert">AWS Certified Solutions Architect – Associate (2023)</div>
+<div class="card">AWS Certified Solutions Architect – Associate (2023)</div>
 
-<div class="cert">Red Hat Certified Engineer (RHCE)</div>
+<div class="card">Red Hat Certified Engineer (RHCE)</div>
 
-<div class="cert">Red Hat Certified System Administrator (RHCSA)</div>
+<div class="card">Red Hat Certified System Administrator (RHCSA)</div>
 
 </section>
 
@@ -331,33 +374,35 @@ May 2016 – Mar 2018
 
 <h3>Achievements</h3>
 
-<div class="cert">Pat on the Back Award – Sep 2024</div>
+<div class="card">Pat on the Back Award – Sep 2024</div>
 
-<div class="cert">BRAVO Award – Mar 2024</div>
+<div class="card">BRAVO Award – Mar 2024</div>
 
-<div class="cert">Extra Mile Employee – Dec 2019</div>
+<div class="card">Extra Mile Employee – Dec 2019</div>
 
 </section>
 
 <footer>
 
-© 2026 Sushant Patekar | DevOps Engineer Portfolio
+© 2026 Sushant Patekar | DevOps Portfolio
 
 </footer>
 
 <script>
 
-const tools = [
+const tools=[
+
 "AWS","Docker","Kubernetes","Terraform",
 "Jenkins","Git","Ansible","Linux",
-"OpenShift","DevOps","ELK","Nagios"
+"OpenShift","ELK","Nagios","CI/CD"
+
 ]
 
-const area = document.getElementById("balls")
+const container=document.getElementById("balls")
 
-tools.forEach(tool => {
+tools.forEach(tool=>{
 
-let ball = document.createElement("div")
+let ball=document.createElement("div")
 
 ball.className="ball"
 
@@ -365,11 +410,9 @@ ball.innerText=tool
 
 ball.style.left=Math.random()*100+"%"
 
-ball.style.animationDuration=(10+Math.random()*20)+"s"
+ball.style.animationDuration=(10+Math.random()*15)+"s"
 
-ball.style.fontSize="14px"
-
-area.appendChild(ball)
+container.appendChild(ball)
 
 })
 

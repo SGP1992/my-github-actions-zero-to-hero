@@ -6,13 +6,16 @@ on:
 jobs:
    
    deploy:
-     #env:
-        #DOCKERHUB_USRE: sgp1992
+     env:
+        DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
        # DOCKER_TAG: ${{ github.sha }}
         
      runs-on: self-hosted
      
      steps:
+       - name: checkout code
+         run: echo $DOCKERHUB_USER
+         
        - name: checkout code
          uses: actions/checkout@v4
 

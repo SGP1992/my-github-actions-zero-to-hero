@@ -1,117 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sushant Patekar | DevOps Engineer</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI;
-scroll-behavior:smooth;
-}
-
 body{
+margin:0;
+font-family:Segoe UI;
 background:#0f172a;
 color:white;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* HEADER */
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#020617;
-padding:15px 10%;
-display:flex;
-justify-content:space-between;
-z-index:1000;
+header{
+text-align:center;
+padding:40px;
 }
 
-nav h2{
+header h1{
+font-size:42px;
+margin-bottom:5px;
+}
+
+header h2{
+font-weight:400;
 color:#38bdf8;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+.contact{
+margin-top:10px;
+font-size:14px;
+opacity:.9;
 }
 
-/* HERO */
+/* FLOATING DEVOPS BALLS */
 
-.hero{
-height:100vh;
+.devops-area{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.ball{
+position:absolute;
+width:120px;
+height:120px;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:0 10%;
-}
-
-.hero-container{
-display:flex;
-align-items:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.hero-text h1{
-font-size:48px;
-}
-
-.hero-text span{
-color:#38bdf8;
-}
-
-.hero-text p{
-margin-top:15px;
-color:#cbd5f5;
-max-width:500px;
-}
-
-.hero-image img{
-width:280px;
-border-radius:50%;
-border:4px solid #38bdf8;
-box-shadow:0 0 25px rgba(56,189,248,0.5);
-animation:float 4s ease-in-out infinite;
+background:linear-gradient(135deg,#06b6d4,#6366f1);
+color:white;
+font-weight:bold;
+animation:float 18s infinite linear;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
 @keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
+
+0%{transform:translateY(100vh) rotate(0deg);}
+100%{transform:translateY(-200px) rotate(360deg);}
+
 }
 
-.btn{
-margin-top:25px;
-display:inline-block;
-padding:12px 28px;
-background:#38bdf8;
-color:black;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* SECTION */
+/* SECTIONS */
 
 section{
-padding:80px 10%;
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
 }
 
-.title{
-font-size:32px;
-color:#38bdf8;
-margin-bottom:30px;
+h3{
+font-size:28px;
+border-left:5px solid #38bdf8;
+padding-left:10px;
+margin-bottom:20px;
 }
 
 /* SKILLS */
@@ -119,217 +94,220 @@ margin-bottom:30px;
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+gap:15px;
 }
 
 .skill{
 background:#1e293b;
-padding:20px;
-border-radius:10px;
+padding:15px;
+border-radius:8px;
 text-align:center;
-transition:0.3s;
-}
-
-.skill:hover{
-transform:translateY(-5px);
-background:#334155;
 }
 
 /* TIMELINE */
 
 .timeline{
-border-left:3px solid #38bdf8;
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:30px;
-}
-
-/* CERT */
-
-.cert{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
-}
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.social i{
-font-size:30px;
-margin:10px;
-color:#38bdf8;
-}
-
-/* ANIMATION */
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.show{
-opacity:1;
-transform:translateY(0);
-}
-
-#tools{
-padding:80px 10%;
-text-align:center;
-}
-
-.tools-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-gap:30px;
+position:relative;
 margin-top:40px;
 }
 
-.tool{
-background:#1e293b;
+.timeline::before{
+content:'';
+position:absolute;
+left:50%;
+width:4px;
+height:100%;
+background:#38bdf8;
+}
+
+.timeline-item{
+width:45%;
 padding:20px;
-border-radius:12px;
-transition:0.3s;
+background:#1e293b;
+border-radius:8px;
+position:relative;
+margin-bottom:30px;
 }
 
-.tool:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
+.timeline-item:nth-child(odd){
+left:0;
 }
 
-.tool img{
-width:60px;
-height:60px;
-margin-bottom:10px;
+.timeline-item:nth-child(even){
+left:55%;
 }
 
-.tool p{
-font-weight:500;
+.timeline-item h4{
+margin:0;
+color:#38bdf8;
 }
+
+/* CERTIFICATIONS */
+
+.cert{
+background:#1e293b;
+padding:15px;
+margin:10px 0;
+border-radius:6px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.7;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<nav>
-<h2>Sushant</h2>
+<div class="devops-area" id="balls"></div>
 
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-</div>
+<header>
 
-</nav>
+<h1>Sushant Ghansham Patekar</h1>
 
-<!-- HERO -->
+<h2>Senior Linux & DevOps Engineer</h2>
 
-<section class="hero">
+<div class="contact">
 
-<div class="hero-container">
+📍 Mumbai, India  
+📞 +91-7021176686  
+✉ sushant.patekar9@gmail.com  
 
-<div class="hero-text">
+<br><br>
 
-<h1>Hello I'm <span>Sushant Patekar</span></h1>
-
-<p>
-Senior Linux & DevOps Engineer with 9+ years of experience managing
-OpenShift clusters, Kubernetes infrastructure and enterprise Linux
-systems.
-</p>
-
-<a href="#contact" class="btn">Contact Me</a>
+LinkedIn  
+https://www.linkedin.com/in/sushant-patekar-a4b616105/
 
 </div>
 
-<div class="hero-image">
+</header>
 
-<img src="profile.jpg">
+<section>
 
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="fade">
-
-<h2 class="title">About Me</h2>
+<h3>Professional Summary</h3>
 
 <p>
 
-Senior DevOps and Linux engineer based in Mumbai with strong expertise
-in Kubernetes, OpenShift, automation and enterprise infrastructure.
+Senior Linux & DevOps Engineer with 9+ years of experience managing enterprise infrastructure,
+OpenShift clusters, and production systems. Expert in Linux administration, Kubernetes,
+OpenShift, automation, CI/CD pipelines, and cloud infrastructure.
 
-Experienced in performance tuning, production troubleshooting,
-CI/CD pipeline development and cloud environments.
+Strong experience with Red Hat technologies, performance tuning, infrastructure
+automation, monitoring systems, and high availability production environments.
 
 </p>
 
 </section>
 
-<!-- SKILLS -->
+<section>
 
-<section id="skills" class="fade">
-
-<h2 class="title">Core Skills</h2>
+<h3>Core Skills</h3>
 
 <div class="skills">
 
-<div class="skill">Linux (RHEL / Ubuntu)</div>
-<div class="skill">Kubernetes</div>
 <div class="skill">OpenShift</div>
+<div class="skill">Kubernetes</div>
 <div class="skill">Docker</div>
 <div class="skill">AWS</div>
-<div class="skill">Jenkins</div>
+<div class="skill">Linux (RHEL)</div>
 <div class="skill">Ansible</div>
+<div class="skill">Jenkins</div>
+<div class="skill">Git</div>
 <div class="skill">ELK Stack</div>
+<div class="skill">Nagios</div>
+<div class="skill">VMware</div>
 <div class="skill">Networking</div>
-<div class="skill">NFS Storage</div>
 
 </div>
 
 </section>
 
-<!-- EXPERIENCE -->
+<section>
 
-<section id="experience" class="fade">
-
-<h2 class="title">Experience</h2>
+<h3>Work Experience Timeline</h3>
 
 <div class="timeline">
 
 <div class="timeline-item">
 
-<h3>Tech Mahindra</h3>
-<p>Tech Lead – Linux & DevOps Engineer</p>
-<p>2021 – Present</p>
+<h4>Tech Mahindra</h4>
+
+<p>
+
+Tech Lead – Linux & DevOps Engineer  
+Aug 2021 – Present
+
+<br><br>
+
+• Administered OpenShift production clusters  
+• Led OCP upgrades 4.10 → 4.18  
+• Designed CI/CD pipelines using Jenkins & Bitbucket  
+• Automated infrastructure using Bash & Ansible  
+• Managed RHV virtualization and NFS storage
+
+</p>
 
 </div>
 
 <div class="timeline-item">
 
-<h3>Capgemini</h3>
-<p>Associate Consultant – Linux Administrator</p>
-<p>2018 – 2021</p>
+<h4>Capgemini</h4>
+
+<p>
+
+Associate Consultant – Linux Administrator  
+Dec 2018 – Aug 2021
+
+<br><br>
+
+• Provided enterprise Linux L1/L2/L3 support  
+• Managed AWS hybrid infrastructure  
+• Automated operational tasks with Bash  
+• Administered VMware environments
+
+</p>
 
 </div>
 
 <div class="timeline-item">
 
-<h3>Simple Logic IT</h3>
-<p>System Administrator</p>
-<p>2018</p>
+<h4>Simple Logic IT Pvt Ltd</h4>
+
+<p>
+
+Executive System Administrator  
+Apr 2018 – Dec 2018
+
+<br><br>
+
+• Supported SBI UPI and enterprise projects  
+• Performed Linux installation and hardening  
+• Maintained server health monitoring
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>T&M Services Consulting</h4>
+
+<p>
+
+Linux & Network Administrator  
+May 2016 – Mar 2018
+
+<br><br>
+
+• Managed Linux servers inside BARC campus  
+• Configured switches and firewall rules  
+• Maintained system performance monitoring
+
+</p>
 
 </div>
 
@@ -337,54 +315,62 @@ CI/CD pipeline development and cloud environments.
 
 </section>
 
-<!-- CERTIFICATIONS -->
+<section>
 
-<section class="fade">
+<h3>Certifications</h3>
 
-<h2 class="title">Certifications</h2>
+<div class="cert">AWS Certified Solutions Architect – Associate (2023)</div>
 
-<div class="cert">AWS Certified Solutions Architect – Associate</div>
 <div class="cert">Red Hat Certified Engineer (RHCE)</div>
+
 <div class="cert">Red Hat Certified System Administrator (RHCSA)</div>
 
 </section>
 
-<!-- CONTACT -->
+<section>
 
-<section id="contact" class="contact fade">
+<h3>Achievements</h3>
 
-<h2 class="title">Contact</h2>
+<div class="cert">Pat on the Back Award – Sep 2024</div>
 
-<p>📍 Mumbai, India</p>
-<p>📞 +91 7021176686</p>
-<p>✉ sushant.patekar9@gmail.com</p>
+<div class="cert">BRAVO Award – Mar 2024</div>
 
-<div class="social">
-
-<a href="https://www.linkedin.com/in/sushant-patekar-a4b616105/">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-github"></i>
-</a>
-
-</div>
+<div class="cert">Extra Mile Employee – Dec 2019</div>
 
 </section>
 
+<footer>
+
+© 2026 Sushant Patekar | DevOps Engineer Portfolio
+
+</footer>
+
 <script>
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
-})
-})
+const tools = [
+"AWS","Docker","Kubernetes","Terraform",
+"Jenkins","Git","Ansible","Linux",
+"OpenShift","DevOps","ELK","Nagios"
+]
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el)
+const area = document.getElementById("balls")
+
+tools.forEach(tool => {
+
+let ball = document.createElement("div")
+
+ball.className="ball"
+
+ball.innerText=tool
+
+ball.style.left=Math.random()*100+"%"
+
+ball.style.animationDuration=(10+Math.random()*20)+"s"
+
+ball.style.fontSize="14px"
+
+area.appendChild(ball)
+
 })
 
 </script>

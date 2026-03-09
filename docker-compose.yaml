@@ -1,5 +1,6 @@
-servcie:
+servcies:
   web:
-    image: :
+    image: ${DOCKERHUB_USER}/github-actions-app:latest
+    ports:
       - "80:80"
   

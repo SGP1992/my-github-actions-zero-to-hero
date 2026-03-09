@@ -7,8 +7,8 @@ jobs:
    
    deploy:
      env:
-        DOCKERHUB_USRE: ${{ vars.DOCKERHUB_USER }}
-        DOCKER_TAG: ${{ github.sha }}
+        DOCKERHUB_USRE: sgp1992
+       # DOCKER_TAG: ${{ github.sha }}
         
      runs-on: self-hosted
      

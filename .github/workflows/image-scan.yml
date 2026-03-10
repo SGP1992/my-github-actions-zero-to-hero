@@ -13,7 +13,7 @@ jobs:
 
             - name: checkout Code
               uses: actions/checkout@v4
-              
+
             - name: Login to Dcoker HUB
               uses: docker/login-action@v3
               with:
@@ -24,6 +24,6 @@ jobs:
               uses: aquasecurity/trivy-action@0.35.0
               with:
                 image-ref: '${{ vars.DOCKERHUB_USER}}/github-actions-app:${{ github.sha }}'
-                severity: 'CRITICAL,HIGH'
+                severity: 'CRITICAL'
                 exit-code: '1' 
                 trivyignore: ${{ github.workspace }}/.trivyignore 

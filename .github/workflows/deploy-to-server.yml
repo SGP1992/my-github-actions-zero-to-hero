@@ -10,7 +10,6 @@ jobs:
 
         setps:
 
-            - name: 
             - name: SSH to  server
               uses: appleboy/ssh-action@v1.0.3
               with:

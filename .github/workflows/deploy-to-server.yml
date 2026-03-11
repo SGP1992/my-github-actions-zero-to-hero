@@ -13,8 +13,10 @@ jobs:
             - name: SSH to  server
               uses: appleboy/ssh-action@v1.0.3
               with:
-                host: ${{ secrets.EC2_SSH_HOST }}
-                username: ${{ secrets.EC2_SSH_USER }}
+                #host: ${{ secrets.EC2_SSH_HOST }}
+                #username: ${{ secrets.EC2_SSH_USER }}
+                host: 18.234.230.50
+                username: ubuntu
                 key:  ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                    echo "starting Deployment "
